@@ -1,0 +1,10 @@
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\bin\Debug\EF_StudiiCaz_Scenariul2.exe.config
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\bin\Debug\EF_StudiiCaz_Scenariul2.exe
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\bin\Debug\EF_StudiiCaz_Scenariul2.pdb
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\bin\Debug\EntityFramework.dll
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\bin\Debug\EntityFramework.xml
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\obj\Debug\EF_StudiiCaz_Scenariul2.csproj.CopyComplete
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\obj\Debug\EF_StudiiCaz_Scenariul2.exe
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\EF_StudiiCaz_Scenariul2\obj\Debug\EF_StudiiCaz_Scenariul2.pdb

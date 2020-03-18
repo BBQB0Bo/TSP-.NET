@@ -1,0 +1,11 @@
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\bin\Debug\Laborator_EF_StudiiCaz.exe.config
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\bin\Debug\Laborator_EF_StudiiCaz.exe
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\bin\Debug\Laborator_EF_StudiiCaz.pdb
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\bin\Debug\EntityFramework.dll
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\bin\Debug\EntityFramework.xml
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\obj\Debug\Laborator_EF_StudiiCaz.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\obj\Debug\Laborator_EF_StudiiCaz.csproj.CopyComplete
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\obj\Debug\Laborator_EF_StudiiCaz.exe
+C:\Users\Robert\source\repos\Laborator_EF_StudiiCaz\Laborator_EF_StudiiCaz\obj\Debug\Laborator_EF_StudiiCaz.pdb
