@@ -1,0 +1,10 @@
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\bin\Debug\netcoreapp3.1\DatabaseNETCore.deps.json
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\bin\Debug\netcoreapp3.1\DatabaseNETCore.dll
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\obj\Debug\netcoreapp3.1\DatabaseNETCore.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\obj\Debug\netcoreapp3.1\DatabaseNETCore.AssemblyInfoInputs.cache
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\obj\Debug\netcoreapp3.1\DatabaseNETCore.AssemblyInfo.cs
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\bin\Debug\netcoreapp3.1\DatabaseNETCore.runtimeconfig.json
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\bin\Debug\netcoreapp3.1\DatabaseNETCore.runtimeconfig.dev.json
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\bin\Debug\netcoreapp3.1\DatabaseNETCore.pdb
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\obj\Debug\netcoreapp3.1\DatabaseNETCore.dll
+C:\Users\Robert\source\repos\DatabaseNETCore\DatabaseNETCore\obj\Debug\netcoreapp3.1\DatabaseNETCore.pdb
