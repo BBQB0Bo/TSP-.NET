@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MyPhotosModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="MyPhotosModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Files" EntityType="MyPhotosModel.File" />
+    <EntitySet Name="Proprieties" EntityType="MyPhotosModel.Propriety" />
+    <EntitySet Name="DynamicProprieties" EntityType="MyPhotosModel.DynamicPropriety" />
+    <AssociationSet Name="FilePropriety" Association="MyPhotosModel.FilePropriety">
+      <End Role="File" EntitySet="Files" />
+      <End Role="Propriety" EntitySet="Proprieties" />
+    </AssociationSet>
+    <AssociationSet Name="FileDynamicPropriety" Association="MyPhotosModel.FileDynamicPropriety">
+      <End Role="File" EntitySet="Files" />
+      <End Role="DynamicPropriety" EntitySet="DynamicProprieties" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullPath" Type="String" Nullable="false" />
+    <Property Name="IsPhoto" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Propriety" Relationship="MyPhotosModel.FilePropriety" FromRole="File" ToRole="Propriety" />
+    <NavigationProperty Name="DynamicProprieties" Relationship="MyPhotosModel.FileDynamicPropriety" FromRole="File" ToRole="DynamicPropriety" />
+  </EntityType>
+  <EntityType Name="Propriety">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataCreated" Type="DateTime" Nullable="false" />
+    <Property Name="Event" Type="String" Nullable="false" />
+    <Property Name="People" Type="String" Nullable="false" />
+    <Property Name="Landscapes" Type="String" Nullable="false" />
+    <Property Name="Photoplace" Type="String" Nullable="false" />
+    <NavigationProperty Name="File" Relationship="MyPhotosModel.FilePropriety" FromRole="Propriety" ToRole="File" />
+  </EntityType>
+  <EntityType Name="DynamicPropriety">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProprietyName" Type="String" Nullable="false" />
+    <Property Name="ProprietyValue" Type="String" Nullable="false" />
+    <NavigationProperty Name="Files" Relationship="MyPhotosModel.FileDynamicPropriety" FromRole="DynamicPropriety" ToRole="File" />
+  </EntityType>
+  <Association Name="FilePropriety">
+    <End Type="MyPhotosModel.File" Role="File" Multiplicity="0..1" />
+    <End Type="MyPhotosModel.Propriety" Role="Propriety" Multiplicity="0..1" />
+  </Association>
+  <Association Name="FileDynamicPropriety">
+    <End Type="MyPhotosModel.File" Role="File" Multiplicity="*" />
+    <End Type="MyPhotosModel.DynamicPropriety" Role="DynamicPropriety" Multiplicity="*" />
+  </Association>
+</Schema>
