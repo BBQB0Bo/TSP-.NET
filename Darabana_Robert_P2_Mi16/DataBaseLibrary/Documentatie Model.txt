@@ -1,0 +1,18 @@
+Subsemnatul Darabana Robert Constantin declar pe propria raspundere ca acest cod nu a fost copiat din Internet sau din
+alte surse. Pentru documentare am folosit urmatoarele surse:
+- carti: -
+- link-uri: -https://docs.microsoft.com/en-us/dotnet/csharp/
+	    -https://profs.info.uaic.ro/~iasimin/
+	    -https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/
+
+
+Explicare model :
+
+Pentru realizara modelului am folosit 3 entitati.
+Avem prima entitate File cu atributele (Id,FullPath,IsPhoto,IsDeleted).Aceasta entitate are o relatie de 0..1-0..1 cu entitatea Propriety cu atributele
+(Id,DataCreated,Event,People,Landscapes,Photoplace).Deci pentru fiecare File am decis sa avem un cel putin un Propriety.Entitatea Propriety contine
+atributele de baza pe care trebuie sa le aiba un File inafara de proprietatile dinamice.
+De asemenea ca sa acoperim problema cu proprietatile dinamice am realizat o entitate DynamicPropriety cu atributele(Id,ProprietyName,ProprietyValue) care
+este intr-o relatie many-to-many cu entitatea File.
+Modelul l-am realizat cum a fost prezentat la laborator EF Model Designer First.
+Prima data am facut Designul la entitati si relatiile dintre acestea si apoi am generat automat codul(Contextul si clasele POCO).

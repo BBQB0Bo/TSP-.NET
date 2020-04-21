@@ -1,0 +1,60 @@
+Subsemnatul Darabana Robert Constantin declar pe propria raspundere ca acest cod nu a fost copiat din Internet sau din
+alte surse. Pentru documentare am folosit urmatoarele surse:
+- carti: -
+- link-uri: -https://docs.microsoft.com/en-us/dotnet/csharp/
+	    -https://profs.info.uaic.ro/~iasimin/
+	    -https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/
+
+Pentru realizarea API-ului m-am folosit de modelul explicat ulterior.
+Api-ul contine 4 documente cu extensia .cs (DynamicPropService.cs , FileService.cs , ProprietyService.cs , SearchService.cs)
+
+Fisierul FileService.cs contine urmatoarele functii ajutatoare la realizarea GUI-lui:
+
+ 1) public void PrintFiles(List<DataBaseLibrary.File> listFile) - afiseaza toate Fileluri-le din baza de date
+ 2) public List<DataBaseLibrary.File> GetPhotos() - afiseaza toate pozele din baza de date 
+ 3) public List<DataBaseLibrary.File> GetVideos() - afiseaza toate videourile din baza de date
+ 4) public List<FileDTO> GetFiles() - functie care returneaza toate Fileuri-le din baza de date sub forma de FileDTO(id,fullPath,IsPhoto) -> Am folosit un DTO
+ ca sa afisam in GUI doar ce este necesar pentru utilizator.
+ 5) public int GetMaxId() - functie prin care aflam id-ul maxim din entitatea File
+ 6) public string AddFile(string fullPath,string dataCreated, string eve, string people, string landscapes, string photoPlace) - Functie prin care adaugam
+ un File nou in baza de date impreuna cu proprietatile de baza a acestuia.
+ 7) public string[] AddFilesFromDirectory(string fullPath) - Functie prin care afisam toate file pathurile dintr-un director.
+ 8) public bool PhotoOrImage(string fullPath) - Functie prin care vedem daca un File este poza sau video.
+ 9) public string DeleteFile(string fullPath) - Functie prin care stergem un File impreuna cu legaturile pe care le are in celelalte entitati.
+ 
+ Aceste functii ne ajuta cu entitatea File.
+
+Fisierul ProprietyService.cs contine urmatoarele functii ajutatoare la realizarea GUI-lui:
+
+1) public Propriety returnPropriety(string fullPath) - returneaza o proprietate a unui anumit File
+2) public static DateTime returnDateTime(string date) - returneaza o data din string in format DateTime
+3) public void updateDateTime(string fullPath, string date) - updateaza DateTime-ul
+4) public void updateEvent(string fullPath, string eve) - updateaza Evenimentul
+5) public void updatePeople(string fullPath, string people) - updateaza Oamenii din poza.
+6) public void updateLandscapes(string fullPath, string landscapes) - updateaza peisajele din poza
+7) public void updatePhotoPlace(string fullPath, string photoPlace) - updateaza locatia unde a fost facuta poza
+8) public void updateAll(string fullPath, string date, string eve, string people, string landscapes, string photoPlace) - updateaza tot de mai sus deodata.
+
+Aceste functii ne ajuta cu entitatea Propriety.
+
+Fiserul DynamicPropService.cs contine urmatoarele functii ajutatoare la realizarea GUI-lui:
+
+1)public void AddDynamicProp(string fullPath,string proprietyName,string proprietyValue) - adauga o proprietate dinamica unui anumit File
+2)public void DeleteDynamicProp(string fullPath, string propName) - sterge o anumita proprietate de la un anumit File
+3)public void UpdateDynamicProp(string fullPath, string propName, string oldPropValue, string newPropValue) - da update la o anumita proprietate dinamica
+
+Aceste functii ne ajuta cu entitatea DynamicPropriety
+
+Fiserul SearchService.cs contine urmatoarele functii ajutatoare la realizarea GUI-lui:
+
+1) public List<File> searchByDate(String date) - Cautare dupa data
+2) public List<File> searchByPeople(String people) - Cautare dupa oameni
+3) public List<File> searchByLandscapes(String landscapes) - Cautare dupa peisaje
+4) public List<File> searchByPhotoPlace(String photoPlace) - Cautare dupa locul unde a fost facuta fotografia/video-ul
+5) public List<File> searchByDynamicProp(String propName,String propValue) - Cautare dupa o anumita proprietate dinamica alaturi de valoarea acesteia
+6) public List<File> searchByDynamicPropName(String propName) - Cautare dupa o anumita proprietate dinamica 
+
+Toate aceste 4 fisere opereaza pe baza de date facand operatii cu aceasta (Update,Delete,Insert).
+Am realizat acest API pentru a ma ajuta ulterior in realizarea GUI-lui
+
+Consider ca API-ul contine toate functionalitatile pe care trebuia sa le aiba Proiectul.
