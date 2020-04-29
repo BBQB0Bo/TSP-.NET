@@ -1,0 +1,5 @@
+C:\Users\Robert\source\repos\gRPC_si_EF\gRPC_si_EF\bin\Debug\gRPC_si_EF.dll
+C:\Users\Robert\source\repos\gRPC_si_EF\gRPC_si_EF\bin\Debug\gRPC_si_EF.pdb
+C:\Users\Robert\source\repos\gRPC_si_EF\gRPC_si_EF\obj\Debug\gRPC_si_EF.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\gRPC_si_EF\gRPC_si_EF\obj\Debug\gRPC_si_EF.dll
+C:\Users\Robert\source\repos\gRPC_si_EF\gRPC_si_EF\obj\Debug\gRPC_si_EF.pdb

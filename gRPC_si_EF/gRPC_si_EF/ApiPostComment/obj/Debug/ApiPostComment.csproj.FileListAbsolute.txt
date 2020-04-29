@@ -1,0 +1,14 @@
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\ApiPostComment.dll.config
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\ApiPostComment.dll
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\ApiPostComment.pdb
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\DataBaseLibrary.dll
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\EntityFramework.dll
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\DataBaseLibrary.pdb
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\DataBaseLibrary.dll.config
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\EntityFramework.xml
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\obj\Debug\ApiPostComment.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\obj\Debug\ApiPostComment.csproj.CopyComplete
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\obj\Debug\ApiPostComment.dll
+C:\Users\Robert\source\repos\gRPC_si_EF\ApiPostComment\obj\Debug\ApiPostComment.pdb

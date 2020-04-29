@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GrpcService";
+
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc AddPost  (AddPostRequest) returns (AddPostReply);
+  rpc UpdatePost (PostModel) returns (PostModel);
+  rpc GetPostById (GetPostByIdRequest) returns (PostModel);
+  rpc DeletePost (DeletePostRequest) returns (DeletePostReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+
+// Empty request
+message AddPostRequest{}
+
+// The repsponse for AddPost function
+message AddPostReply{
+	bool result = 1;
+}
+
+// Modelul pentru Post
+message PostModel{
+	int32 postId = 1;
+	string description = 2;
+	string domain = 3;
+	google.protobuf.Timestamp date = 4;
+}
+
+// Request GetPostById
+message GetPostByIdRequest{
+	int32 postId = 1;
+}
+
+
+// Request DeletePost
+message DeletePostRequest{
+	int32 postId = 1;
+}
+
+// response DeletePost
+message DeletePostReply{
+	int32 result = 1;
+}
