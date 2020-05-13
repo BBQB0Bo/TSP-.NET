@@ -1,0 +1,15 @@
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\API.dll.config
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\API.dll
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\API.pdb
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\EntityFramework.dll
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\PostComment.dll
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\PostComment.pdb
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\PostComment.dll.config
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\EntityFramework.xml
+C:\Users\Robert\source\repos\PostComment\API\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robert\source\repos\PostComment\API\obj\Debug\API.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\PostComment\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\PostComment\API\obj\Debug\API.csproj.CopyComplete
+C:\Users\Robert\source\repos\PostComment\API\obj\Debug\API.dll
+C:\Users\Robert\source\repos\PostComment\API\obj\Debug\API.pdb

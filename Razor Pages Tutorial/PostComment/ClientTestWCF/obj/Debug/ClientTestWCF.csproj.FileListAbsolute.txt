@@ -1,0 +1,12 @@
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\bin\Debug\ClientTestWCF.exe.config
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\bin\Debug\ClientTestWCF.exe
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\bin\Debug\ClientTestWCF.pdb
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\bin\Debug\EntityFramework.dll
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\bin\Debug\EntityFramework.xml
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\obj\Debug\ClientTestWCF.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\obj\Debug\ClientTestWCF.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\obj\Debug\ClientTestWCF.csproj.CopyComplete
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\obj\Debug\ClientTestWCF.exe
+C:\Users\Robert\source\repos\PostComment\ClientTestWCF\obj\Debug\ClientTestWCF.pdb
