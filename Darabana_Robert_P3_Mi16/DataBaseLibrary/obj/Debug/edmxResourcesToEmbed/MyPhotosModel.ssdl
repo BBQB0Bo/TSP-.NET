@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyPhotosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MyPhotosModelStoreContainer">
+    <EntitySet Name="Files" EntityType="MyPhotosModel.Store.Files" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proprieties" EntityType="MyPhotosModel.Store.Proprieties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DynamicProprieties" EntityType="MyPhotosModel.Store.DynamicProprieties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FileDynamicPropriety" EntityType="MyPhotosModel.Store.FileDynamicPropriety" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FilePropriety" Association="MyPhotosModel.Store.FilePropriety">
+      <End Role="File" EntitySet="Files" />
+      <End Role="Propriety" EntitySet="Proprieties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileDynamicPropriety_File" Association="MyPhotosModel.Store.FK_FileDynamicPropriety_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="FileDynamicPropriety" EntitySet="FileDynamicPropriety" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileDynamicPropriety_DynamicPropriety" Association="MyPhotosModel.Store.FK_FileDynamicPropriety_DynamicPropriety">
+      <End Role="DynamicPropriety" EntitySet="DynamicProprieties" />
+      <End Role="FileDynamicPropriety" EntitySet="FileDynamicPropriety" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsPhoto" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proprieties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataCreated" Type="datetime" Nullable="false" />
+    <Property Name="Event" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="People" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Landscapes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photoplace" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="File_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DynamicProprieties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProprietyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProprietyValue" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileDynamicPropriety">
+    <Key>
+      <PropertyRef Name="Files_Id" />
+      <PropertyRef Name="DynamicProprieties_Id" />
+    </Key>
+    <Property Name="Files_Id" Type="int" Nullable="false" />
+    <Property Name="DynamicProprieties_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FilePropriety">
+    <End Role="File" Type="MyPhotosModel.Store.Files" Multiplicity="0..1" />
+    <End Role="Propriety" Type="MyPhotosModel.Store.Proprieties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Propriety">
+        <PropertyRef Name="File_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileDynamicPropriety_File">
+    <End Role="File" Type="MyPhotosModel.Store.Files" Multiplicity="1" />
+    <End Role="FileDynamicPropriety" Type="MyPhotosModel.Store.FileDynamicPropriety" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileDynamicPropriety">
+        <PropertyRef Name="Files_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileDynamicPropriety_DynamicPropriety">
+    <End Role="FileDynamicPropriety" Type="MyPhotosModel.Store.FileDynamicPropriety" Multiplicity="*" />
+    <End Role="DynamicPropriety" Type="MyPhotosModel.Store.DynamicProprieties" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DynamicPropriety">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileDynamicPropriety">
+        <PropertyRef Name="DynamicProprieties_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

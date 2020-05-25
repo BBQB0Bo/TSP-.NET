@@ -1,0 +1,66 @@
+﻿@page
+@model RazorPagesPhotos.Pages.Photos.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h5>Au fost afisate @ViewData["Number"] File-uri.</h5>
+
+<form>
+    <p>
+        Static Propriety: <select asp-for="Prop" asp-items="Model.Props">
+            <option value="">All</option>
+        </select>
+        Prop Value: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<form>
+    <p>
+        Dynamic Propriety: <select asp-for="DynamicProp" asp-items="Model.DynamicProps">
+            <option value="">All</option>
+        </select>
+        Prop Value: <input type="text" asp-for="SearchStringDy" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Files[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Files[0].FullPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Files[0].Type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Files)
+        {
+            <tr style="font-size:small">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullPath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    <a asp-page="/Proprieties/ListProprieties" asp-route-id="@item.Id" asp-route-path="@item.FullPath">Proprieties</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

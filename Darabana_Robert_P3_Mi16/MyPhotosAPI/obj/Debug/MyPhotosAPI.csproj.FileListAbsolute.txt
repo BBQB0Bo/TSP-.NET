@@ -1,0 +1,15 @@
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\MyPhotosAPI.dll.config
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\MyPhotosAPI.dll
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\MyPhotosAPI.pdb
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\DataBaseLibrary.dll
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\EntityFramework.dll
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\DataBaseLibrary.pdb
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\DataBaseLibrary.dll.config
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\EntityFramework.xml
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\obj\Debug\MyPhotosAPI.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\obj\Debug\MyPhotosAPI.csproj.CopyComplete
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\obj\Debug\MyPhotosAPI.dll
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\obj\Debug\MyPhotosAPI.pdb
+C:\Users\Robert\source\repos\MyPhotosProject2\MyPhotosAPI\obj\Debug\MyPhotosAPI.csproj.CoreCompileInputs.cache

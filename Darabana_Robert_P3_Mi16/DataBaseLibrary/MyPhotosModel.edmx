@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyPhotosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MyPhotosModelStoreContainer">
+    <EntitySet Name="Files" EntityType="MyPhotosModel.Store.Files" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proprieties" EntityType="MyPhotosModel.Store.Proprieties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DynamicProprieties" EntityType="MyPhotosModel.Store.DynamicProprieties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FileDynamicPropriety" EntityType="MyPhotosModel.Store.FileDynamicPropriety" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FilePropriety" Association="MyPhotosModel.Store.FilePropriety">
+      <End Role="File" EntitySet="Files" />
+      <End Role="Propriety" EntitySet="Proprieties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileDynamicPropriety_File" Association="MyPhotosModel.Store.FK_FileDynamicPropriety_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="FileDynamicPropriety" EntitySet="FileDynamicPropriety" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FileDynamicPropriety_DynamicPropriety" Association="MyPhotosModel.Store.FK_FileDynamicPropriety_DynamicPropriety">
+      <End Role="DynamicPropriety" EntitySet="DynamicProprieties" />
+      <End Role="FileDynamicPropriety" EntitySet="FileDynamicPropriety" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsPhoto" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proprieties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataCreated" Type="datetime" Nullable="false" />
+    <Property Name="Event" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="People" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Landscapes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photoplace" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="File_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DynamicProprieties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProprietyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProprietyValue" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileDynamicPropriety">
+    <Key>
+      <PropertyRef Name="Files_Id" />
+      <PropertyRef Name="DynamicProprieties_Id" />
+    </Key>
+    <Property Name="Files_Id" Type="int" Nullable="false" />
+    <Property Name="DynamicProprieties_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FilePropriety">
+    <End Role="File" Type="MyPhotosModel.Store.Files" Multiplicity="0..1" />
+    <End Role="Propriety" Type="MyPhotosModel.Store.Proprieties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Propriety">
+        <PropertyRef Name="File_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileDynamicPropriety_File">
+    <End Role="File" Type="MyPhotosModel.Store.Files" Multiplicity="1" />
+    <End Role="FileDynamicPropriety" Type="MyPhotosModel.Store.FileDynamicPropriety" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileDynamicPropriety">
+        <PropertyRef Name="Files_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FileDynamicPropriety_DynamicPropriety">
+    <End Role="FileDynamicPropriety" Type="MyPhotosModel.Store.FileDynamicPropriety" Multiplicity="*" />
+    <End Role="DynamicPropriety" Type="MyPhotosModel.Store.DynamicProprieties" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DynamicPropriety">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FileDynamicPropriety">
+        <PropertyRef Name="DynamicProprieties_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MyPhotosModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MyPhotosModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Files" EntityType="MyPhotosModel.File" />
+          <EntitySet Name="Proprieties" EntityType="MyPhotosModel.Propriety" />
+          <EntitySet Name="DynamicProprieties" EntityType="MyPhotosModel.DynamicPropriety" />
+          <AssociationSet Name="FilePropriety" Association="MyPhotosModel.FilePropriety">
+            <End Role="File" EntitySet="Files" />
+            <End Role="Propriety" EntitySet="Proprieties" />
+          </AssociationSet>
+          <AssociationSet Name="FileDynamicPropriety" Association="MyPhotosModel.FileDynamicPropriety">
+            <End Role="File" EntitySet="Files" />
+            <End Role="DynamicPropriety" EntitySet="DynamicProprieties" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullPath" Type="String" Nullable="false" />
+          <Property Name="IsPhoto" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="Propriety" Relationship="MyPhotosModel.FilePropriety" FromRole="File" ToRole="Propriety" />
+          <NavigationProperty Name="DynamicProprieties" Relationship="MyPhotosModel.FileDynamicPropriety" FromRole="File" ToRole="DynamicPropriety" />
+        </EntityType>
+        <EntityType Name="Propriety">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataCreated" Type="DateTime" Nullable="false" />
+          <Property Name="Event" Type="String" Nullable="false" />
+          <Property Name="People" Type="String" Nullable="false" />
+          <Property Name="Landscapes" Type="String" Nullable="false" />
+          <Property Name="Photoplace" Type="String" Nullable="false" />
+          <NavigationProperty Name="File" Relationship="MyPhotosModel.FilePropriety" FromRole="Propriety" ToRole="File" />
+        </EntityType>
+        <EntityType Name="DynamicPropriety">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProprietyName" Type="String" Nullable="false" />
+          <Property Name="ProprietyValue" Type="String" Nullable="false" />
+          <NavigationProperty Name="Files" Relationship="MyPhotosModel.FileDynamicPropriety" FromRole="DynamicPropriety" ToRole="File" />
+        </EntityType>
+        <Association Name="FilePropriety">
+          <End Type="MyPhotosModel.File" Role="File" Multiplicity="0..1" />
+          <End Type="MyPhotosModel.Propriety" Role="Propriety" Multiplicity="0..1" />
+        </Association>
+        <Association Name="FileDynamicPropriety">
+          <End Type="MyPhotosModel.File" Role="File" Multiplicity="*" />
+          <End Type="MyPhotosModel.DynamicPropriety" Role="DynamicPropriety" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyPhotosModelStoreContainer" CdmEntityContainer="MyPhotosModelContainer">
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.File)">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+          <ScalarProperty Name="IsPhoto" ColumnName="IsPhoto" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proprieties">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.Propriety)">
+        <MappingFragment StoreEntitySet="Proprieties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="People" ColumnName="People" />
+          <ScalarProperty Name="Landscapes" ColumnName="Landscapes" />
+          <ScalarProperty Name="Photoplace" ColumnName="Photoplace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DynamicProprieties">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.DynamicPropriety)">
+        <MappingFragment StoreEntitySet="DynamicProprieties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProprietyName" ColumnName="ProprietyName" />
+          <ScalarProperty Name="ProprietyValue" ColumnName="ProprietyValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FilePropriety" TypeName="MyPhotosModel.FilePropriety" StoreEntitySet="Proprieties">
+      <EndProperty Name="File">
+        <ScalarProperty Name="Id" ColumnName="File_Id" />
+      </EndProperty>
+      <EndProperty Name="Propriety">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="File_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FileDynamicPropriety" TypeName="MyPhotosModel.FileDynamicPropriety" StoreEntitySet="FileDynamicPropriety">
+      <EndProperty Name="File">
+        <ScalarProperty Name="Id" ColumnName="Files_Id" />
+      </EndProperty>
+      <EndProperty Name="DynamicPropriety">
+        <ScalarProperty Name="Id" ColumnName="DynamicProprieties_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

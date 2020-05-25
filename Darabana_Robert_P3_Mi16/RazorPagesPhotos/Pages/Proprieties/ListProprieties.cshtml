@@ -1,0 +1,91 @@
+﻿@page
+@model RazorPagesPhotos.Pages.Proprieties.ListProprietiesModel
+@{
+    ViewData["Title"] = "ListProprieties";
+}
+
+<h5>Proprietatea statica pentru poza cu id-ul @ViewData["Photo"] este:</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Propriety.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Propriety.DataCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Propriety.Event)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Propriety.People)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Propriety.Landscapes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Propriety.Photoplace)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr style="font-size:small">
+            <td>
+                @Html.DisplayFor(modelItem => Model.Propriety.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Propriety.DataCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Propriety.Event)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Propriety.People)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Propriety.Landscapes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Propriety.Photoplace)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h5>Proprietatile dinamice pentru poza cu id-ul @ViewData["Photo"] sunt:</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DynamicProps[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DynamicProps[0].ProprietyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DynamicProps[0].ProprietyValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.DynamicProps)
+        {
+            <tr style="font-size:small">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProprietyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProprietyValue)
+                </td>
+            </tr>
+        }
+</table>

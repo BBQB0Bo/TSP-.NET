@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f71e878138484df4a5d6a31c7ca403f0" Name="Diagram1" >
+        <EntityTypeShape EntityType="MyPhotosModel.File" Width="1.5" PointX="1.875" PointY="0.5" />
+        <EntityTypeShape EntityType="MyPhotosModel.Propriety" Width="1.5" PointX="6.375" PointY="0.5" />
+        <EntityTypeShape EntityType="MyPhotosModel.DynamicPropriety" Width="1.5" PointX="4.25" PointY="2.375" />
+        <AssociationConnector Association="MyPhotosModel.FilePropriety" />
+        <AssociationConnector Association="MyPhotosModel.FileDynamicPropriety" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

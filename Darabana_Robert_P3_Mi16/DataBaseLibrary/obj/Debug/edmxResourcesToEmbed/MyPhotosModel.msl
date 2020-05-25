@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyPhotosModelStoreContainer" CdmEntityContainer="MyPhotosModelContainer">
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.File)">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+          <ScalarProperty Name="IsPhoto" ColumnName="IsPhoto" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proprieties">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.Propriety)">
+        <MappingFragment StoreEntitySet="Proprieties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="People" ColumnName="People" />
+          <ScalarProperty Name="Landscapes" ColumnName="Landscapes" />
+          <ScalarProperty Name="Photoplace" ColumnName="Photoplace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DynamicProprieties">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.DynamicPropriety)">
+        <MappingFragment StoreEntitySet="DynamicProprieties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProprietyName" ColumnName="ProprietyName" />
+          <ScalarProperty Name="ProprietyValue" ColumnName="ProprietyValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FilePropriety" TypeName="MyPhotosModel.FilePropriety" StoreEntitySet="Proprieties">
+      <EndProperty Name="File">
+        <ScalarProperty Name="Id" ColumnName="File_Id" />
+      </EndProperty>
+      <EndProperty Name="Propriety">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="File_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FileDynamicPropriety" TypeName="MyPhotosModel.FileDynamicPropriety" StoreEntitySet="FileDynamicPropriety">
+      <EndProperty Name="File">
+        <ScalarProperty Name="Id" ColumnName="Files_Id" />
+      </EndProperty>
+      <EndProperty Name="DynamicPropriety">
+        <ScalarProperty Name="Id" ColumnName="DynamicProprieties_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
